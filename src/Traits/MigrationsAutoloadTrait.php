@@ -8,7 +8,7 @@ trait MigrationsAutoloadTrait
 {
     public function loadModuleMigrations($moduleName)
     {
-        $migrationsDirectory = app_path('Modules/' . $moduleName . '/Migrations');
+        $migrationsDirectory = config('jetpack.modules_path') . '/' . $moduleName . '/Migrations';
 
         if (File::isDirectory($migrationsDirectory)) {
             $this->loadMigrationsFrom($migrationsDirectory);

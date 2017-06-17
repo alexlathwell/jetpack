@@ -9,7 +9,7 @@ trait ConfigAutoloadTrait
 {
     public function loadModuleConfig($moduleName)
     {
-        $configDirectory = app_path('Modules/' . $moduleName . '/Config');
+        $configDirectory = config('jetpack.modules_path') . '/' . $moduleName . '/Config';
         if (File::isDirectory($configDirectory)) {
             $files = File::allFiles($configDirectory);
 

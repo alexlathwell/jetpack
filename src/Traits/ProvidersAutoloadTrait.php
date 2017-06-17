@@ -11,7 +11,7 @@ trait ProvidersAutoloadTrait
 {
     public function loadMainServiceProvider($moduleName)
     {
-        $moduleProvidersDirectory = app_path('Modules/' . $moduleName . '/Providers/' . $moduleName . 'ServiceProvider.php');
+        $moduleProvidersDirectory = config('jetpack.modules_path') . '/' . $moduleName . '/Providers/' . $moduleName . 'ServiceProvider.php';
         $mainProviderFiles = File::glob($moduleProvidersDirectory);
         if ($mainProviderFiles) {
             $mainProviderPath = Jetpack::getFullClassNameFromFile(reset($mainProviderFiles));
