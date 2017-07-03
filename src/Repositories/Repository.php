@@ -3,6 +3,7 @@
 namespace AlexLathwell\Jetpack\Repositories;
 
 
+use AlexLathwell\Jetpack\Facades\Jetpack;
 use \Request;
 use Prettus\Repository\Contracts\CacheableInterface;
 use Prettus\Repository\Criteria\RequestCriteria;
@@ -24,7 +25,7 @@ class Repository extends BaseRepository implements CacheableInterface
         $className = class_basename($fullName);
         $class = str_replace('Repository', '', $className);
         $module = isset($this->module) ? $this->module : $class;
-        $namespace = 'App\\Modules\\' . $module . '\\Api\\Models\\' . $class;
+        $namespace = Jetpack::getModuleNamespace() . $module . '\\Api\\Models\\' . $class;
 
         return $namespace;
     }

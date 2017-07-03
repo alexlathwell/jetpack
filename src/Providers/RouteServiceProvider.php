@@ -12,7 +12,7 @@ class RouteServiceProvider extends LaravelRouteServiceProvider
 {
     protected function mapWebRoutes()
     {
-        $moduleNamespace = Jetpack::getModuleNamespaces();
+        $moduleNamespace = Jetpack::getModuleNamespace();
         $modulePaths = Jetpack::getModulePaths();
 
         foreach ($modulePaths as $modulePath) {
@@ -31,7 +31,7 @@ class RouteServiceProvider extends LaravelRouteServiceProvider
 
     protected function mapApiRoutes()
     {
-        $moduleNamespace = Jetpack::getModuleNamespaces();
+        $moduleNamespace = Jetpack::getModuleNamespace();
         $modulePaths = Jetpack::getModulePaths();
 
         foreach ($modulePaths as $modulePath) {

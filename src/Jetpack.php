@@ -7,8 +7,7 @@ use Illuminate\Support\Facades\File;
 
 class Jetpack
 {
-
-    public function getModuleNamespaces()
+    public function getModuleNamespace()
     {
         return config('jetpack.namespace');
     }
